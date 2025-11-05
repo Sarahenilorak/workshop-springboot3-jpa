@@ -2,6 +2,8 @@ package com.educandoweb.course.entities;
 
 import java.time.Instant;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +21,8 @@ public class Payment implements java.io.Serializable {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY) 
     private Long id;
     private Instant moment;
-
+    
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
